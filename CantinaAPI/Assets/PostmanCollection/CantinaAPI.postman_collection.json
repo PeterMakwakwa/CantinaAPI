@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "b6d485c1-18d0-484f-8865-5c395f95285e",
+		"name": "CantinaAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3719332"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "IdentityLogin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\":\"pm2@gmail.com\",\r\n  \"password\": \"PM1@km123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7297/Account/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"Account",
+								"login"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://localhost:7297/login' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"email\":\"makwakwapeter@gmail.com\",\r\n  \"password\": \"Peter@123\"\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "IdentityRegisteration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"pm23@gmail.com\",\r\n  \"password\": \"PM1@km1234\",\r\n  \"fullName\": \"KingMpp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7297/Account/register",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"Account",
+								"register"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://localhost:7297/register' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"email\": \"pm1@gmail.com\",\r\n  \"password\": \"PM1@km123\",\r\n  \"fullName\": \"KingMp\"\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "login-google",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7297/login-google",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"login-google"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7297/login-google' \\\r\n  -H 'accept: */*'"
+					},
+					"response": []
+				},
+				{
+					"name": "google-response",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7297/google-response",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"google-response"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7297/google-response' \\\r\n  -H 'accept: */*'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MenuItem",
+			"item": [
+				{
+					"name": "GetMenuItems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjI4OTMxNmY1LWE5YzItNDc1NC1iMjdmLTExZTE0OWI1MjkzZCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJLaW5nTXAiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJwbTJAZ21haWwuY29tIiwiZXhwIjoxNzMzODM3MTYzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3Mjk3IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI5NyJ9.eFEaq3-nf6WqcgSUWu3v4SN_6-6tui72kPYmFQ1RMUo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7297/api/MenuItems/getallMenuItems",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"api",
+								"MenuItems",
+								"getallMenuItems"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7297/api/Items' \\\r\n  -H 'accept: text/plain'"
+					},
+					"response": []
+				},
+				{
+					"name": "GetMenuItemByItemId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjI4OTMxNmY1LWE5YzItNDc1NC1iMjdmLTExZTE0OWI1MjkzZCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJLaW5nTXAiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJwbTJAZ21haWwuY29tIiwiZXhwIjoxNzMzODM3MTYzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3Mjk3IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI5NyJ9.eFEaq3-nf6WqcgSUWu3v4SN_6-6tui72kPYmFQ1RMUo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7297/api/MenuItems/getMenuItemById/9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"api",
+								"MenuItems",
+								"getMenuItemById",
+								"9"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7297/api/Items/1' \\\r\n  -H 'accept: text/plain'"
+					},
+					"response": []
+				},
+				{
+					"name": "SearchMenuItem",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7297/api/MenuItems/search?searchText=piz",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"api",
+								"MenuItems",
+								"search"
+							],
+							"query": [
+								{
+									"key": "searchText",
+									"value": "piz"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7297/api/Items/search?searchText=cheese' \\\r\n  -H 'accept: text/plain'"
+					},
+					"response": []
+				},
+				{
+					"name": "AddItems",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"VVP12\",\r\n  \"description\": \"VVP1 Testing\",\r\n  \"price\": 1300,\r\n  \"imageUrl\": \"http://example.com/images/vvp1.jpg\",\r\n  \"type\": \"Drink\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7297/api/MenuItems/addMenuItem",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"api",
+								"MenuItems",
+								"addMenuItem"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://localhost:7297/api/Items' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"name\": \"Meat\",\r\n  \"description\": \"Meat Testing\",\r\n  \"price\": 120.56,\r\n  \"imageUrl\": \"https://i.imgur.com/exampleImageID.jpg\",\r\n  \"type\": \"Dish\"\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMenuItem",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"VVP4\",\r\n  \"description\": \"Delicious cheese pizza Testing Put T\",\r\n  \"price\": 12.99,\r\n  \"imageUrl\": \"http://example.com/images/pizza.jpg\",\r\n  \"type\": \"Dish\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7297/api/MenuItems/updateMenuItem/14",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"api",
+								"MenuItems",
+								"updateMenuItem",
+								"14"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'PUT' \\\r\n  'https://localhost:7297/api/Items/1' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"name\": \"Meat\",\r\n  \"description\": \"Delicious cheese pizza Testing Put Test3\",\r\n  \"price\": 12.99,\r\n  \"imageUrl\": \"http://example.com/images/pizza.jpg\",\r\n  \"type\": \"Dish\"\r\n\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMenuItemById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7297/api/MenuItems/deleteMenuItem/16",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"api",
+								"MenuItems",
+								"deleteMenuItem",
+								"16"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'DELETE' \\\r\n  'https://localhost:7297/api/Items/6' \\\r\n  -H 'accept: */*'"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

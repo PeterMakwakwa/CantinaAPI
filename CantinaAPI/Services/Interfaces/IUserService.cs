@@ -6,6 +6,7 @@ namespace CantinaAPI.Services.Interfaces
     {
         Task<string> RegisterAsync(RegisterRequestDto model);
         Task<string> LoginAsync(LoginRequestDto model);
+        Task<string> HandleGoogleResponseAsync(HttpContext httpContext);
     }
 }
 

@@ -51,11 +51,94 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=******!" -p 1433:1433 -v "sq
 
 you can also use the docker-compose file: docker-compose.yaml included in the project directory to create the container
 ```
+![Cantina S Q L Sever Image](CantinaAPI/Assets/Images/CantinaSQLSeverImage.PNG)
 
 ### 2. Clone the CantinaAPI Repository
 ```bash
 git clone https://github.com/PeterMakwakwa/CantinaAPI.git
 cd cantina-api
 
+restore the project dependencies
+
 ```
 Please note that the project include the unit tests, so you can run the tests to see if everything is working as expected
+
+### 3. Update appsettings the Connection Strings, and secrets in the appsettings.json file
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost,1433;Database=CantinaDB;User=sa;Password=****;TrustServerCertificate=True;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "Cachetime": "5",
+  "AllowedHosts": "*",
+  "Jwt": {
+    "Key": "*****",
+    "Issuer": "https://localhost:7297", // e.g., your application's name
+    "Audience": "https://localhost:7297" // e.g., your API consumers
+  },
+  "Authentication": {
+    "Google": {
+      "ClientId": "****",
+      "ClientSecret": ***"
+    },
+    "RateLimit": {
+      "RequestsPerSecond": 5,
+      "Seconds": 1
+    }
+  }
+}
+
+also update jwt secret keys, and google client id and secret in the appsettings.json file
+```
+
+### 4. Migrations and Run the API
+```bash
+dotne add migrations InitialCreate to Seed the database and create all required tables
+dotnet ef database update
+```
+after migrations the following tables will be created and seeded with some sample data
+![Sample Item Image](CantinaAPI/Assets/Images/SampleItemImage.PNG)
+
+### 5. Run the API and Test
+```bash
+
+```
+![Postman Collection](CantinaAPI/Assets/Images/Postman%20Collection.PNG)
+
+Register the user first and then login to get the token, then you can use the token to access the other endpoints
+for the google authentication you can use the following endpoint to get the google token
+```bash
+https://localhost:7297/login-google
+https://localhost:7297/google-response
+```
+Kindly note that for testing i have whitelisted just one email address for the google authentication cantinacat9@gmail.com, you can add more email addresses in the Google cloud console for testing, the reason i did this is because the app is not published , currently running on localhost if it was published i would have added the whitelisted emails to the google cloud console
+```bash
+
+i have also included the postman collection in the project directory under Assets, you can import it and test the endpoints
+```
+[Cantina A P I.Postman Collection](CantinaAPI/Assets/PostmanCollection/CantinaAPI.postman_collection.json)
+
+
+i decided not to add sensative data in the appsettings.json file, so you will have to add the secrets and connection strings yourself, however i can share with anyone my appsettings .json file with the correct secrets and connection strings if needed
+
+
+Finally you can run the tests to see if everything is working as expected, i have included the unit tests in the project.
+
+
+### 6. Run Unit tests using Xunit 
+
+
+![Unit Tests](CantinaAPI/Assets/Images/unitTests.PNG)
+
+
+### i would love to demo this given an opportunity 
+
+Thanks for the challenge , i enjoyed working on it, i hope to hear from you soon
+
+```bash
