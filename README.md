@@ -37,8 +37,8 @@ The only think that is questionable on the production readiness is the use of in
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download)
 - [Docker](https://www.docker.com/)
-- Docker Desjtop
-- MSSQL Server (via Docker)
+- Docker Desktop
+- Docker containerized MSSQL Server
 
 ---
 
