@@ -1,4 +1,4 @@
-# CantinaAPI
+# CantinaAPI(Versioned)
 
 ## Overview
 
@@ -137,8 +137,6 @@ Finally you can run the tests to see if everything is working as expected, i hav
 ![Unit Tests](CantinaAPI/Assets/Images/unitTests.PNG)
 
 
-### i would love to demo this given an opportunity 
-
-Thanks for the challenge , i enjoyed working on it, i hope to hear from you soon
+Enjoy.
 
 ```bash
