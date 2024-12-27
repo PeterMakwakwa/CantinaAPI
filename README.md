@@ -112,10 +112,10 @@ after migrations the following tables will be created and seeded with some sampl
 ![Postman Collection](CantinaAPI/Assets/Images/Postman%20Collection.PNG)
 
 Register the user first and then login to get the token, then you can use the token to access the other endpoints
-for the google authentication you can use the following endpoint to get the google token
+for the google authentication you can use the following endpoint to get the google token , Please take note of the api version as part of the endpoint
 ```bash
-https://localhost:7297/login-google
-https://localhost:7297/google-response
+https://localhost:7297/v1/login-google
+https://localhost:7297/v1/google-response
 ```
 Kindly note that for testing i have whitelisted just one email address for the google authentication cantinacat9@gmail.com, you can add more email addresses in the Google cloud console for testing, the reason i did this is because the app is not published , currently running on localhost if it was published i would have added the whitelisted emails to the google cloud console
 ```bash
