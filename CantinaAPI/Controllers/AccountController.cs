@@ -1,4 +1,5 @@
-﻿using CantinaAPI.Dtos;
+﻿using Asp.Versioning;
+using CantinaAPI.Dtos;
 using CantinaAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -9,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace CantinaAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class AccountController : Controller
     {
         private readonly IUserService _userService;

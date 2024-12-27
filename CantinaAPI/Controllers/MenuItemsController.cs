@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Asp.Versioning;
+using AutoMapper;
 using CantinaAPI.CustomActionFilters;
 using CantinaAPI.Dtos;
 using CantinaAPI.Models;
@@ -12,9 +13,10 @@ namespace CantinaAPI.Controllers
     /// Controller for managing menu items.
     /// </summary>
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [Authorize]
     [ServiceFilter(typeof(RateLimitFilter))]
+    [ApiVersion("1.0")]
     public class MenuItemsController : Controller
     {
         private readonly IMenuItemService _MenuItemService;

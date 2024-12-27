@@ -4,6 +4,7 @@ using CantinaAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CantinaAPI.Migrations
 {
     [DbContext(typeof(CantinaDbContext))]
-    partial class CantinaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241224173705_databasecreation")]
+    partial class databasecreation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -209,7 +212,7 @@ namespace CantinaAPI.Migrations
                         {
                             Id = "user1-id",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "48e14680-1a81-4a05-b1f1-b3335b3cf703",
+                            ConcurrencyStamp = "2a29fff5-7da0-4942-89c5-6a472a6172cf",
                             Email = "johndoe@example.com",
                             EmailConfirmed = false,
                             FullName = "John Doe",
@@ -218,7 +221,7 @@ namespace CantinaAPI.Migrations
                             NormalizedUserName = "JOHNDOE",
                             PasswordHash = "AQAAAAEAACcQAAAAEGzR29S+clNpeKQiQZosBmIgjexns+nHo2uRSqBYDKSH11+E=",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3ec1e8bc-2b26-4164-aaa2-e218f9bd5156",
+                            SecurityStamp = "ec7c6afb-92bf-408f-8197-66edc3f1ad2f",
                             TwoFactorEnabled = false,
                             UserName = "johndoe"
                         },
@@ -226,7 +229,7 @@ namespace CantinaAPI.Migrations
                         {
                             Id = "user2-id",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5e75d4a4-8929-4ef6-9122-f70941eaeb50",
+                            ConcurrencyStamp = "6fa0ee65-45f7-43f2-80ba-be965df917d0",
                             Email = "janedoe@example.com",
                             EmailConfirmed = false,
                             FullName = "Jane Doe",
@@ -235,7 +238,7 @@ namespace CantinaAPI.Migrations
                             NormalizedUserName = "JANEDOE",
                             PasswordHash = "AQAAAAEAACcQAAAAEGzR29S+clNpeKQiQZosBmIgjexns+nHo2uRSqBYDKSH11+E=",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d808676d-4d07-4981-9264-107d7da8e5a3",
+                            SecurityStamp = "73f253c8-23f7-4a04-9564-04b401bcf0cd",
                             TwoFactorEnabled = false,
                             UserName = "janedoe"
                         });

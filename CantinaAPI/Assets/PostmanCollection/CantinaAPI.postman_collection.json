@@ -25,7 +25,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"email\":\"pm2@gmail.com\",\r\n  \"password\": \"PM1@km123\"\r\n}",
+							"raw": "{\r\n  \"email\":\"pm234wd@gmail.com\",\r\n  \"password\": \"PMdr1@km12345\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -33,13 +33,15 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:7297/Account/login",
+							"raw": "https://localhost:7297/api/v1/Account/login",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "7297",
 							"path": [
+								"api",
+								"v1",
 								"Account",
 								"login"
 							]
@@ -64,7 +66,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"pm23@gmail.com\",\r\n  \"password\": \"PM1@km1234\",\r\n  \"fullName\": \"KingMpp\"\r\n}",
+							"raw": "{\r\n  \"email\": \"pm234wdyh@gmail.com\",\r\n  \"password\": \"PMdr1@km12345\",\r\n  \"fullName\": \"KingMpp1rm\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -72,13 +74,15 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:7297/Account/register",
+							"raw": "https://localhost:7297/api/v1/Account/register",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "7297",
 							"path": [
+								"api",
+								"v1",
 								"Account",
 								"register"
 							]
@@ -150,7 +154,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjI4OTMxNmY1LWE5YzItNDc1NC1iMjdmLTExZTE0OWI1MjkzZCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJLaW5nTXAiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJwbTJAZ21haWwuY29tIiwiZXhwIjoxNzMzODM3MTYzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3Mjk3IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI5NyJ9.eFEaq3-nf6WqcgSUWu3v4SN_6-6tui72kPYmFQ1RMUo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNhMDRlNjMzLWJiNzQtNDYwZC04ZDkzLTBlMmE5MmZlYjk0MSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJLaW5nTXBwMXJtIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicG0yMzR3ZEBnbWFpbC5jb20iLCJleHAiOjE3MzUxNTEzNzIsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyOTciLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3Mjk3In0.-V7jRF7nL7zSCuNoXBD3rimFKxtD1hbskgrYWDi3leg",
 									"type": "string"
 								}
 							]
@@ -163,7 +167,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7297/api/MenuItems/getallMenuItems",
+							"raw": "https://localhost:7297/api/v1.0/MenuItems/getallMenuItems",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -171,6 +175,7 @@
 							"port": "7297",
 							"path": [
 								"api",
+								"v1.0",
 								"MenuItems",
 								"getallMenuItems"
 							]
@@ -200,7 +205,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7297/api/MenuItems/getMenuItemById/9",
+							"raw": "https://localhost:7297/api/v1.0/MenuItems/getMenuItemById/9",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -208,6 +213,7 @@
 							"port": "7297",
 							"path": [
 								"api",
+								"v1.0",
 								"MenuItems",
 								"getMenuItemById",
 								"9"
@@ -228,7 +234,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7297/api/MenuItems/search?searchText=piz",
+							"raw": "https://localhost:7297/api/v1.0/MenuItems/search?searchText=piz",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -236,6 +242,7 @@
 							"port": "7297",
 							"path": [
 								"api",
+								"v1.0",
 								"MenuItems",
 								"search"
 							],
@@ -274,7 +281,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:7297/api/MenuItems/addMenuItem",
+							"raw": "https://localhost:7297/api/v1.0/MenuItems/addMenuItem",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -282,6 +289,7 @@
 							"port": "7297",
 							"path": [
 								"api",
+								"v1.0",
 								"MenuItems",
 								"addMenuItem"
 							]
@@ -314,7 +322,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:7297/api/MenuItems/updateMenuItem/14",
+							"raw": "https://localhost:7297/api/v1.0/MenuItems/updateMenuItem/14",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -322,6 +330,7 @@
 							"port": "7297",
 							"path": [
 								"api",
+								"v1.0",
 								"MenuItems",
 								"updateMenuItem",
 								"14"
@@ -342,7 +351,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7297/api/MenuItems/deleteMenuItem/16",
+							"raw": "https://localhost:7297/api/v1.0/MenuItems/deleteMenuItem/16",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -350,12 +359,47 @@
 							"port": "7297",
 							"path": [
 								"api",
+								"v1.0",
 								"MenuItems",
 								"deleteMenuItem",
 								"16"
 							]
 						},
 						"description": "Generated from cURL: curl -X 'DELETE' \\\r\n  'https://localhost:7297/api/Items/6' \\\r\n  -H 'accept: */*'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "https://localhost:7297/api/v1/Reviews/item/1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7297/api/v1/Reviews/item/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"api",
+								"v1",
+								"Reviews",
+								"item",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7297/api/v1/Reviews/item/1' \\\r\n  -H 'accept: text/plain'"
 					},
 					"response": []
 				}

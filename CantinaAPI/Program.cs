@@ -11,11 +11,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Text;
 using CantinaAPI.CustomActionFilters;
+using Asp.Versioning;
+using Asp.Versioning.ApiExplorer;
+using CantinaAPI.Swagger;
 
 namespace CantinaAPI
 {
@@ -45,7 +47,6 @@ namespace CantinaAPI
 
             // Controllers
             services.AddControllers();
-
             // Database Context
             services.AddDbContext<CantinaDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
@@ -79,6 +80,21 @@ namespace CantinaAPI
             // Swagger
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+            services.ConfigureOptions<ConfigureSwaggerOptions>();
+
+            // Configure API Versioning
+            services.AddApiVersioning(options =>
+            {                
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+                options.ReportApiVersions = true;
+                options.ApiVersionReader = new UrlSegmentApiVersionReader();
+            })
+              .AddApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            });
 
             // Authentication
             ConfigureAuthentication(services, builder);
@@ -120,8 +136,17 @@ namespace CantinaAPI
             // Development environment specific configuration
             if (app.Environment.IsDevelopment())
             {
+                //
+                var versiondescriptionProvider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
+                //
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(options=>
+                {
+                    foreach (var description in versiondescriptionProvider.ApiVersionDescriptions)
+                    {
+                        options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
+                    }
+                });
             }
 
             // Global exception handler

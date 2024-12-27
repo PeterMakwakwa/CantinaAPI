@@ -1,12 +1,16 @@
-﻿using CantinaAPI.Models;
+﻿using Asp.Versioning;
+using CantinaAPI.CustomActionFilters;
+using CantinaAPI.Models;
 using CantinaAPI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace CantinaAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
     public class ReviewsController : ControllerBase
     {
         private readonly IReviewService _service;
